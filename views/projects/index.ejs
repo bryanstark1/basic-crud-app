@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+
+<h1><%= title %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Project Name</th>
+      <th>First Appearance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% projects.forEach((p) => { %>
+    <tr>
+      <td><%= p.name %></td>
+      <td><%= p.firstAppear %></td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<%- include('../partials/footer') %>
