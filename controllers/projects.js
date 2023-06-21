@@ -9,8 +9,18 @@ const newProject = (req, res) => {
   res.render('projects/new', {errorMsg: '', title: 'Add New Project'});
 };
 
+const create = async (req, res) => {
+  try {
+    await Project.create(req.body);
+    res.redirect('/projects');
+  } catch (err) {
+    console.log(err);
+    res.render('projects/new', {errorMsg: err.message});
+  };
+};
 
 module.exports = {
   index,
-  new: newProject
+  new: newProject,
+  create
 }

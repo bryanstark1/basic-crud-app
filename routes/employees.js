@@ -6,5 +6,7 @@ const employeesCtrl = require('../controllers/employees');
 router.get('/', employeesCtrl.index);
 // GET /employees/new
 router.get('/new', employeesCtrl.new);
+// POST /employees
+router.post('/', employeesCtrl.create);
 
 module.exports = router;

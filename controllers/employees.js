@@ -9,8 +9,19 @@ const newEmployee = (req, res) => {
   res.render('employees/new', {errorMsg: '', title: 'Add New Employee'});
 };
 
+const create = async (req, res) => {
+  try {
+    await Employee.create(req.body);
+    res.redirect('/employees');
+  } catch (err) {
+    console.log(err);
+    res.render('employees/new', {errorMsg: err.message});
+  };
+};
+
 
 module.exports = {
   index,
-  new: newEmployee
+  new: newEmployee,
+  create
 }

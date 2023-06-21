@@ -6,5 +6,7 @@ const projectsCtrl = require('../controllers/projects');
 router.get('/', projectsCtrl.index);
 // GET /projects/new
 router.get('/new', projectsCtrl.new);
+// POST /projects
+router.post('/', projectsCtrl.create);
 
 module.exports = router;

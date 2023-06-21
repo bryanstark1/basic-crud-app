@@ -6,5 +6,7 @@ const locationsCtrl = require('../controllers/locations');
 router.get('/', locationsCtrl.index);
 // GET /locations/new
 router.get('/new', locationsCtrl.new);
+// POST /locations
+router.post('/', locationsCtrl.create);
 
 module.exports = router;
