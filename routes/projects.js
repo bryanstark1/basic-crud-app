@@ -8,6 +8,8 @@ router.get('/', projectsCtrl.index);
 router.get('/new', projectsCtrl.new);
 // GET /projects/:id
 router.get('/:id', projectsCtrl.show);
+// GET /projects/:id/edit
+router.get('/:id/edit', projectsCtrl.edit);
 // POST /projects
 router.post('/', projectsCtrl.create);
 

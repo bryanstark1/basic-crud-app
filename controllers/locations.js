@@ -28,10 +28,20 @@ const show = (req, res) => {
   });
 };
 
+const edit = (req, res) => {
+  Location.findById(req.params.id).then((location) => {
+    res.render('locations/edit', {
+      location,
+      title: 'Edit Location'
+    });
+  });
+};
+
 
 module.exports = {
   index,
   new: newLocation,
   create,
-  show
+  show,
+  edit
 }

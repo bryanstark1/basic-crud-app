@@ -8,6 +8,8 @@ router.get('/', locationsCtrl.index);
 router.get('/new', locationsCtrl.new);
 // GET /locations/:id
 router.get('/:id', locationsCtrl.show);
+// GET /locations/:id/edit
+router.get('/:id/edit', locationsCtrl.edit);
 // POST /locations
 router.post('/', locationsCtrl.create);
 

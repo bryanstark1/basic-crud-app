@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+
+<h1><%= title %></h1>
+
+<form action="/locations/<%= location.id %>?_method=PUT" method="POST">
+  <label>Name
+    <input type="text" name="name" value="<%= location.name %>">
+  </label>
+  <label>Image
+    <input type="text" name="image" value="<%= location.image %>">
+  </label>
+  <label>Location
+    <input type="text" name="location" value="<%= location.location %>">
+  </label>
+  <label>First Appearance
+    <%# https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/month %>
+    <input type="month" name="firstAppear" value="<%= location.firstAppear %>">
+  </label>
+  <label>Description
+    <textarea name="description"cols="30" rows="10"><%= location.description %></textarea>
+  </label>
+<button type="submit">Submit</button>
+</form>
+
+<%- include('../partials/footer') %>

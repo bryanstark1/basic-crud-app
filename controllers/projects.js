@@ -28,9 +28,19 @@ const show = (req, res) => {
   });
 };
 
+const edit = (req, res) => {
+  Project.findById(req.params.id).then((project) => {
+    res.render('projects/edit', {
+      project,
+      title: 'Edit Project'
+    });
+  });
+};
+
 module.exports = {
   index,
   new: newProject,
   create,
-  show
+  show,
+  edit
 }
