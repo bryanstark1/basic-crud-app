@@ -15,7 +15,7 @@
     <tr>
       <td><a href="/locations/<%= l.id %>"><%= l.name %></a></td>
       <td><%= l.location %></td>
-      <td><%= l.firstAppear %></td>
+      <td><%= l.firstAppear.toLocaleDateString('en-US', {year: 'numeric', month: 'short'}) %></td>
     </tr>
     <% }) %>
   </tbody>

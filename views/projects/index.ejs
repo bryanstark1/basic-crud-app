@@ -14,7 +14,7 @@
     <tr>
       <td><a href="/projects/<%= p.id %>"><%= p.name %></a></td>
       <%# https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString %>
-      <td><%= p.firstAppear %></td>
+      <td><%= p.firstAppear.toLocaleDateString('en-US', {year: 'numeric', month: 'short'}) %></td>
     </tr>
     <% }) %>
   </tbody>
