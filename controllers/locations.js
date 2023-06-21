@@ -19,9 +19,19 @@ const create = async (req, res) => {
   };
 };
 
+const show = (req, res) => {
+  Location.findById(req.params.id).then((location) => {
+    res.render('locations/show', {
+      location,
+      title: 'Location Details'
+    });
+  });
+};
+
 
 module.exports = {
   index,
   new: newLocation,
-  create
+  create,
+  show
 }

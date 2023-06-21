@@ -19,9 +19,19 @@ const create = async (req, res) => {
   };
 };
 
+const show = (req, res) => {
+  Employee.findById(req.params.id).then((employee) => {
+    res.render('employees/show', {
+      employee,
+      title: "Employee Details"
+    });
+  });
+};
+
 
 module.exports = {
   index,
   new: newEmployee,
-  create
-}
+  create,
+  show
+};

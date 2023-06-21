@@ -19,8 +19,18 @@ const create = async (req, res) => {
   };
 };
 
+const show = (req, res) => {
+  Project.findById(req.params.id).then((project) => {
+    res.render('projects/show', {
+      project,
+      title: 'Project Details'
+    });
+  });
+};
+
 module.exports = {
   index,
   new: newProject,
-  create
+  create,
+  show
 }

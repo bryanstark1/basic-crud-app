@@ -6,6 +6,8 @@ const projectsCtrl = require('../controllers/projects');
 router.get('/', projectsCtrl.index);
 // GET /projects/new
 router.get('/new', projectsCtrl.new);
+// GET /projects/:id
+router.get('/:id', projectsCtrl.show);
 // POST /projects
 router.post('/', projectsCtrl.create);
 

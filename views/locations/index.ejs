@@ -13,7 +13,7 @@
   <tbody>
     <% locations.forEach((l) => { %>
     <tr>
-      <td><%= l.name %></td>
+      <td><a href="/locations/<%= l.id %>"><%= l.name %></a></td>
       <td><%= l.location %></td>
       <td><%= l.firstAppear %></td>
     </tr>
