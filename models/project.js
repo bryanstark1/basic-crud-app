@@ -16,7 +16,12 @@ const projectSchema = new Schema({
   },
   firstAppear: {
     type: Date,
-    default: 'March 1973'
+    default: 
+    // '1973-03'
+    (() => {
+      const date = new Date('1973-03-01');
+      return date;
+    })
   }
 });
 

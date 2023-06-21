@@ -8,5 +8,8 @@
 <p><%= employee.description %></p>
 
 <a href="/employees/<%= employee.id %>/edit">Edit Employee</a>
+<form action="/employees/<%= employee.id %>?_method=DELETE" method="POST">
+  <button type="submit">Delete Employee</button>
+</form>
 
 <%- include('../partials/footer') %>

@@ -49,6 +49,18 @@ const update = async (req, res) => {
   };
 };
 
+const deleteEmployee = async (req, res) => {
+  try {
+    await Employee.findByIdAndRemove(req.params.id);
+    res.redirect('/employees');
+  } catch (err) {
+    res.render('/employees', {
+      errorMsg: err.message,
+      title: 'Employees'
+    });
+  };
+};
+
 
 module.exports = {
   index,
@@ -56,5 +68,6 @@ module.exports = {
   create,
   show,
   edit,
-  update
+  update,
+  delete: deleteEmployee
 };

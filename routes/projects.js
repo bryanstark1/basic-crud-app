@@ -14,5 +14,7 @@ router.get('/:id/edit', projectsCtrl.edit);
 router.post('/', projectsCtrl.create);
 // PUT /projects/:id
 router.put('/:id', projectsCtrl.update);
+// DELETE /projects/:id
+router.delete('/:id', projectsCtrl.delete);
 
 module.exports = router;

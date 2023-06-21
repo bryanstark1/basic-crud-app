@@ -49,6 +49,18 @@ const update = async (req, res) => {
   };
 };
 
+const deleteLocation = async (req, res) => {
+  try {
+    await Location.findByIdAndRemove(req.params.id);
+    res.redirect('/locations');
+  } catch (err) {
+    res.render('/locations', {
+      errorMsg: err.message,
+      title: 'Locations'
+    });
+  };
+};
+
 
 module.exports = {
   index,
@@ -56,5 +68,6 @@ module.exports = {
   create,
   show,
   edit,
-  update
+  update,
+  delete: deleteLocation
 }

@@ -15,5 +15,7 @@ router.get('/:id/edit', employeesCtrl.edit);
 router.post('/', employeesCtrl.create);
 // PUT /employees/:id
 router.put('/:id', employeesCtrl.update);
+// DELETE /employees/:id
+router.delete('/:id', employeesCtrl.delete);
 
 module.exports = router;

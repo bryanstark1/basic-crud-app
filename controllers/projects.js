@@ -39,6 +39,7 @@ const edit = (req, res) => {
 
 const update = async (req, res) => {
   try {
+    req.params.firstAppear = req.params.firstAppear.toLocaleDateString('en-US')
     await Project.findByIdAndUpdate(req.params.id, req.body, {new:true});
     res.redirect(`/projects/${req.params.id}`);
   } catch (err) {
@@ -49,11 +50,24 @@ const update = async (req, res) => {
   };
 };
 
+const deleteProject = async (req, res) => {
+  try {
+    await Project.findByIdAndRemove(req.params.id);
+    res.redirect('/projects');
+  } catch (err) {
+    res.render('/projects', {
+      errorMsg: err.message,
+      title: 'Projects'
+    });
+  };
+};
+
 module.exports = {
   index,
   new: newProject,
   create,
   show,
   edit,
-  update
+  update,
+  delete: deleteProject
 };

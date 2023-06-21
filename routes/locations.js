@@ -14,5 +14,7 @@ router.get('/:id/edit', locationsCtrl.edit);
 router.post('/', locationsCtrl.create);
 // PUT /locations/:id
 router.put('/:id', locationsCtrl.update);
+// DELETE /locations/:id
+router.delete('/:id', locationsCtrl.delete);
 
 module.exports = router;

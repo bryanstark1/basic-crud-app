@@ -8,5 +8,8 @@
 <p><%= location.description %></p>
 
 <a href="/locations/<%= location.id %>/edit">Edit Location</a>
+<form action="/locations/<%= location.id %>?_method=DELETE" method="POST">
+  <button type="submit">Delete Location</button>
+</form>
 
 <%- include('../partials/footer') %>
