@@ -3,7 +3,7 @@
 <h1><%= title %></h1>
 <h2><%= project.name %></h2>
 <img src="<%= project.image %>" alt="Project Image">
-<h3><%= project.firstAppear %></h3>
+<h3><%= project.firstAppear.toLocaleDateString('en-US', {year: 'numeric', month: 'long'}) %></h3>
 <p><%= project.description %></p>
 
 <a href="/projects/<%= project.id %>/edit">Edit Project</a>

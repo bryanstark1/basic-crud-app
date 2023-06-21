@@ -4,7 +4,7 @@
 <h2><%= employee.firstName %> <%= employee.lastName %></h2>
 <img src="<%= employee.image %>" alt="Project Image">
 <h3><%= employee.position %></h3>
-<h3><%= employee.firstAppear %></h3>
+<h3><%= employee.firstAppear.toLocaleDateString('en-US', {year: 'numeric', month: 'long'}) %></h3>
 <p><%= employee.description %></p>
 
 <a href="/employees/<%= employee.id %>/edit">Edit Employee</a>
