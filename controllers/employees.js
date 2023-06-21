@@ -5,7 +5,12 @@ const index = async (req, res) => {
   res.render('employees/index', {employees, title: 'Employees'});
 };
 
+const newEmployee = (req, res) => {
+  res.render('employees/new', {errorMsg: '', title: 'Add New Employee'});
+};
+
 
 module.exports = {
-  index
+  index,
+  new: newEmployee
 }

@@ -1,0 +1,28 @@
+<%- include('../partials/header') %>
+
+<h1><%= title %></h1>
+
+<form action="/employees" method="POST">
+  <label>First Name
+    <input type="text" name="firstName">
+  </label>
+  <label>Last Name
+    <input type="text" name="lastName">
+  </label>
+  <label>Image
+    <input type="text" name="image" placeholder="URL">
+  </label>
+  <label>Position
+    <input type="text" name="position" placeholder="Job Title">
+  </label>
+  <label>First Appearance
+    <%# https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/month %>
+    <input type="month" name="firstAppear">
+  </label>
+  <label>Description
+    <textarea name="description"cols="30" rows="10"></textarea>
+  </label>
+<button type="submit">Submit</button>
+</form>
+
+<%- include('../partials/footer') %>

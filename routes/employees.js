@@ -4,5 +4,7 @@ const employeesCtrl = require('../controllers/employees');
 
 // GET /employees
 router.get('/', employeesCtrl.index);
+// GET /employees/new
+router.get('/new', employeesCtrl.new);
 
 module.exports = router;

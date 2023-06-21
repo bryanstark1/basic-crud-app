@@ -5,7 +5,12 @@ const index = async (req, res) => {
   res.render('locations/index', {locations, title: 'Locations'});
 };
 
+const newLocation = (req, res) => {
+  res.render('locations/new', {errorMsg: '', title: 'Add New Location'});
+};
+
 
 module.exports = {
-  index
+  index,
+  new: newLocation
 }
