@@ -28,10 +28,20 @@ const show = (req, res) => {
   });
 };
 
+const edit =(req, res) => {
+  Employee.findById(req.params.id).then((employee) => {
+    res.render('employees/edit', {
+      employee,
+      title: "Edit Employee"
+    });
+  });
+};
+
 
 module.exports = {
   index,
   new: newEmployee,
   create,
-  show
+  show,
+  edit
 };

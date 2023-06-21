@@ -9,6 +9,8 @@ router.get('/', employeesCtrl.index);
 router.get('/new', employeesCtrl.new);
 // GET /employees/:id
 router.get('/:id', employeesCtrl.show);
+// GET /employees/:id/edit
+router.get('/:id/edit', employeesCtrl.edit);
 // POST /employees
 router.post('/', employeesCtrl.create);
 

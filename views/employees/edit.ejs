@@ -1,0 +1,28 @@
+<%- include('../partials/header') %>
+
+<h1><%= title %></h1>
+
+<form action="/employees/<%= employee.id %>?_method=PUT" method="POST">
+  <label>First Name
+    <input type="text" name="firstName" value="<%= employee.firstName %>">
+  </label>
+  <label>Last Name
+    <input type="text" name="lastName" value="<%= employee.lastName %>">
+  </label>
+  <label>Image
+    <input type="text" name="image" value="<%= employee.image %>">
+  </label>
+  <label>Position
+    <input type="text" name="position" value="<%= employee.position %>">
+  </label>
+  <label>First Appearance
+    <%# https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/month %>
+    <input type="month" name="firstAppear" value="<%= employee.firstAppear %>">
+  </label>
+  <label>Description
+    <textarea name="description"cols="30" rows="10"><%= employee.description %></textarea>
+  </label>
+<button type="submit">Submit</button>
+</form>
+
+<%- include('../partials/footer') %>
