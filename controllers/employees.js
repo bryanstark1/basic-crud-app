@@ -37,11 +37,24 @@ const edit =(req, res) => {
   });
 };
 
+const update = async (req, res) => {
+  try {
+    await Employee.findByIdAndUpdate(req.params.id, req.body, {new:true});
+    res.redirect(`/employees/${req.params.id}`);
+  } catch (err) {
+    res.render(`/employees/${req.params.id}/edit`, {
+      errorMsg: err.message,
+      title: 'Edit Employee'
+    });
+  };
+};
+
 
 module.exports = {
   index,
   new: newEmployee,
   create,
   show,
-  edit
+  edit,
+  update
 };

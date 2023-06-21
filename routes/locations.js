@@ -12,5 +12,7 @@ router.get('/:id', locationsCtrl.show);
 router.get('/:id/edit', locationsCtrl.edit);
 // POST /locations
 router.post('/', locationsCtrl.create);
+// PUT /locations/:id
+router.put('/:id', locationsCtrl.update);
 
 module.exports = router;

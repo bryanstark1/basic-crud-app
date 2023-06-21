@@ -37,10 +37,23 @@ const edit = (req, res) => {
   });
 };
 
+const update = async (req, res) => {
+  try {
+    await Project.findByIdAndUpdate(req.params.id, req.body, {new:true});
+    res.redirect(`/projects/${req.params.id}`);
+  } catch (err) {
+    res.render(`/projects/${req.params.id}/edit`, {
+      errorMsg: err.message,
+      title: 'Edit Project'
+    });
+  };
+};
+
 module.exports = {
   index,
   new: newProject,
   create,
   show,
-  edit
-}
+  edit,
+  update
+};

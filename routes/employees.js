@@ -13,5 +13,7 @@ router.get('/:id', employeesCtrl.show);
 router.get('/:id/edit', employeesCtrl.edit);
 // POST /employees
 router.post('/', employeesCtrl.create);
+// PUT /employees/:id
+router.put('/:id', employeesCtrl.update);
 
 module.exports = router;

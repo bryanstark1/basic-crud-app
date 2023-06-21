@@ -12,5 +12,7 @@ router.get('/:id', projectsCtrl.show);
 router.get('/:id/edit', projectsCtrl.edit);
 // POST /projects
 router.post('/', projectsCtrl.create);
+// PUT /projects/:id
+router.put('/:id', projectsCtrl.update);
 
 module.exports = router;
